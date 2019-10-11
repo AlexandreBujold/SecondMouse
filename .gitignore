@@ -36,6 +36,6 @@ sysinfo.txt
 *.unitypackage
 
 # FMOD files
-SecondMouse/Assets/Plugins/FMOD/Resources/FMODStudioCache.asset
-SecondMouse/Assets/StreamingAssets/*.bank
+SecondMouse/FMODstudioProject/SecondMouseSound/Plugins/FMOD/Resources/FMODStudioCache.asset
+SecondMouse/FMODstudioProject/SecondMouseSound/StreamingAssets/*.bank
 fmod_editor.log

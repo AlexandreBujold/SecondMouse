@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{877a6803-746f-44e8-a085-6f1b1499768b}">
+		<property name="assetPath">
+			<value>SoundFX/BounceOnCloud/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e1cea63a-5ae4-4ebf-826a-13eb0cc0329b}</destination>
+		</relationship>
+	</object>
+</objects>

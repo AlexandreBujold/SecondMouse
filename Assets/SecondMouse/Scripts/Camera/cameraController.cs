@@ -21,8 +21,6 @@ public class cameraController : MonoBehaviour
     [Header("POI Container Settings")]
     public pointOfInterest[] POIs;
 
-
-
     private void Start()
     {
         if (currentPOI == -1)
@@ -35,7 +33,18 @@ public class cameraController : MonoBehaviour
             UpdateCurrentPOI(currentPOI);
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown("d"))//move to next POI
+        {
+            NextPOI();
+        }
 
+        if (Input.GetKeyDown("a"))//move to previous POI
+        {
+            PreviousPOI();
+        }
+    }
     public void UpdateCurrentPOI(int _index)
     {
         if (_index < POIs.Length)

@@ -7,7 +7,7 @@ public class SheepController : MonoBehaviour
 {
 
     Rigidbody m_rb;
-    public float speed = 5f;
+    public float topSpeed = 5f;
     public float maxBounceVelocity = 10f;
     public Vector3 currentVelocity;
 
@@ -38,7 +38,7 @@ public class SheepController : MonoBehaviour
 
         //Player Movement
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        input = Vector2.ClampMagnitude(input, 1);
+        input = Vector2.ClampMagnitude(input, topSpeed);
 
         Vector3 camF = m_cam.forward;
         Vector3 camR = m_cam.right;
@@ -48,7 +48,9 @@ public class SheepController : MonoBehaviour
         camF = camF.normalized;
         camR = camR.normalized;
 
-        transform.position += (camF * input.y + camR * input.x) * Time.deltaTime * speed;
+        //m_rb.velocity = Vector3.Lerp(camF * input.y + camR * input.x, m_rb.velocity, topSpeed);
+
+        transform.position += (camF * input.y + camR * input.x) * Time.deltaTime * topSpeed;
         //m_rb.velocity += (camF * input.y + camR * input.x) * Time.deltaTime * speed.x;
 
         AdjustBounce();

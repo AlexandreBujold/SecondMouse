@@ -95,7 +95,7 @@ public class SheepController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Debug.DrawRay(transform.position, transform.up * 10f, Color.red);
+        Debug.DrawRay(transform.position, transform.forward * 10f, Color.red);
     }
 
     /*

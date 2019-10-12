@@ -32,6 +32,8 @@ public class PlatformSpawner : MonoBehaviour
 
     private Coroutine CalculatePositionsCoroutine;
 
+    Vector3 startPos;
+
     bool positionsCreated = false;
     bool platformsCreated = false;
     bool courseCreated = false;
@@ -47,12 +49,16 @@ public class PlatformSpawner : MonoBehaviour
         {
             tickRate = 0;
         }
+        startPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (transform.position.y <= 10)
+        {
+            transform.position = startPos;
+        }
     }
 
     public IEnumerator CreateCourse()

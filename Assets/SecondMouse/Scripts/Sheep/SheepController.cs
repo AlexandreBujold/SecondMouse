@@ -7,9 +7,15 @@ public class SheepController : MonoBehaviour
 {
 
     Rigidbody m_rb;
-    public Vector3 speed = Vector3.one;
+    public float speed = 5f;
+    public float maxBounceVelocity = 10f;
     public Vector3 currentVelocity;
-    private Quaternion startRotation;
+
+    [Space]
+    //Camera Movement & Player Rotation
+    public Transform m_cameraPivot;
+    public Transform m_cam;
+    private float heading = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,72 +24,79 @@ public class SheepController : MonoBehaviour
         {
             m_rb = GetComponentInChildren<Rigidbody>();
         }
-
-        startRotation = transform.rotation;
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        if (m_rb != null)
-        {
-            Vector3 velocity = new Vector3(input.x * speed.x, m_rb.velocity.y, input.y * speed.z);
-            //Debug.LogWarning(velocity);
-            //velocity = transform.TransformDirection(velocity);
-            //Debug.LogError(velocity);
-            m_rb.velocity = velocity;
-            currentVelocity = velocity;
-        }
-        //transform.rotation = startRotation;
-    }
-
-    /*
-    
-    public NavMeshAgent myNavAgent;
-    public Camera gameCamera;
-    public Vector3 speed;
-
-    private Coroutine rotate;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (myNavAgent == null)
-        {
-            myNavAgent = GetComponentInChildren<NavMeshAgent>();
-        }
-
-        if (gameCamera == null)
-        {
-            gameCamera = Camera.main; //!
-        }
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        if (myNavAgent != null && gameCamera != null)
-        {
-            if (Mathf.Sign(input.y) == -1)
-            {
-                input.y = 0;
-            }
-            Vector3 velocity = new Vector3(input.x * speed.x, myNavAgent.velocity.y, input.y * speed.z);
-            velocity = transform.TransformDirection(velocity);
-            myNavAgent.velocity = velocity;
-        }
+        //Rotate Camera
+        heading += Input.GetAxis("Mouse X") * Time.deltaTime * 180;
+        m_cameraPivot.rotation = Quaternion.Euler(0, heading, 0);
 
-        if (Input.GetKeyDown(KeyCode.S))
+        //Rotate Sheep to face same direction as Camera
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, m_cameraPivot.transform.eulerAngles.y, m_cameraPivot.rotation.eulerAngles.z);
+
+        //Player Movement
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        input = Vector2.ClampMagnitude(input, 1);
+
+        Vector3 camF = m_cam.forward;
+        Vector3 camR = m_cam.right;
+
+        camF.y = 0;
+        camR.y = 0;
+        camF = camF.normalized;
+        camR = camR.normalized;
+
+        transform.position += (camF * input.y + camR * input.x) * Time.deltaTime * speed;
+        //m_rb.velocity += (camF * input.y + camR * input.x) * Time.deltaTime * speed.x;
+
+        AdjustBounce();
+        currentVelocity = m_rb.velocity;
+    }
+
+    public void AdjustBounce()
+    {
+        if (m_rb != null)
         {
-            if (rotate == null)
-            {
-                rotate = StartCoroutine(RotateBy(180, 0.5f));
-            }
+            Vector3.ClampMagnitude(m_rb.velocity, maxBounceVelocity);
         }
     }
+
+    // public void Decelerate(ref Vector3 cameraForward, ref Vector3 cameraRight, ref Vector2 input)
+    // {
+    //     if (input.x == 0 || input.y == 0)
+    //     {
+    //         if (m_rb.velocity.x >= -0.01f && m_rb.velocity.x <= 0.01f)
+    //         {
+    //             m_rb.velocity = new Vector3(0, m_rb.velocity.y, m_rb.velocity.z);
+    //         }
+    //         else
+    //         {
+    //             m_rb.velocity += (-cameraForward - cameraRight) * Time.deltaTime * speed.x;
+    //         }
+    //     }
+
+    //     // if (input.y == 0)
+    //     // {
+    //     //     if (m_rb.velocity.z >= -0.01f && m_rb.velocity.z <= 0.01f)
+    //     //     {
+    //     //         m_rb.velocity = new Vector3(m_rb.velocity.x, m_rb.velocity.y, 0);
+    //     //     }
+    //     //     else
+    //     //     {
+    //     //         m_rb.velocity += (-cameraForward * input.y - cameraRight * input.x) * Time.deltaTime * speed.x;
+    //     //     }
+    //     // }
+    // }
+
+
+    private void OnDrawGizmos()
+    {
+        Debug.DrawRay(transform.position, transform.up * 10f, Color.red);
+    }
+
+    /*
 
     IEnumerator RotateBy(float amount, float lerpTime) //Rotate smoothly by amount over lerpTime
 	{

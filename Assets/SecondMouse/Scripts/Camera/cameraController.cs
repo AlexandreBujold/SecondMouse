@@ -9,7 +9,7 @@ public class cameraController : MonoBehaviour
     public float cameraTurnSpeed = 0.1f;
     void LateUpdate()
     {
-        
-        transform.rotation = Quaternion.Lerp(transform.rotation, transform.LookAt(lookAt), Time.time * cameraTurnSpeed);
+
+        //transform.rotation = Quaternion.Lerp(transform.rotation, transform.LookAt(lookAt), Time.time * cameraTurnSpeed);
     }
 }

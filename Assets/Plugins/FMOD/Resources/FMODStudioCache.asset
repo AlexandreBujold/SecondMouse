@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8852796559181512605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637064248762352322
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8791473546533573433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,17 +114,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 584773640872271815}
-  - {fileID: 3215695430502177401}
+  - {fileID: -8852796559181512605}
   EditorEvents:
   - {fileID: 5291693242582062473}
-  - {fileID: -8791473546533573433}
-  - {fileID: 7093389946389364379}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 3215695430502177401}
+  - {fileID: -8852796559181512605}
   StringsBanks:
   - {fileID: 584773640872271815}
-  stringsBankWriteTime: 637064864439611451
+  stringsBankWriteTime: 637064248762432104
   cacheVersion: 3
 --- !u!114 &584773640872271815
 MonoBehaviour:
@@ -122,11 +138,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637064864439611451
+  lastModified: 637064248762432104
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 876
+    Value: 766
   Exists: 1
 --- !u!114 &2384425236471792190
 MonoBehaviour:
@@ -203,7 +219,7 @@ MonoBehaviour:
   guid: 18b8e6b6232b41438b33bc76bde1838b
   Banks:
   - {fileID: 6771951614995259056}
-  - {fileID: 3215695430502177401}
+  - {fileID: -8852796559181512605}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1

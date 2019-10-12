@@ -7,17 +7,17 @@ public class cameraController : MonoBehaviour
 {
     [Header("Point of Interest Settings")]
     public int currentPOI = -1; //the index of -1 is saved for master tagret and mount for the start
-
+    [Space]
     [Header("Camera Mount Settings")]
     public Transform masterCameraMount;
     public Transform currentCameraMount;
     public float cameraMoveSpeed = 1f;
-
+    [Space]
     [Header("Look At Settings")]
     public Transform masterLookAtTarget;
     private Transform currentLookAtTarget;
     public float cameraTurnSpeed = 0.1f;
-
+    [Space]
     [Header("POI Container Settings")]
     public pointOfInterest[] POIs;
 

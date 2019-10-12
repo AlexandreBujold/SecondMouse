@@ -45,6 +45,19 @@ public class cameraController : MonoBehaviour
             PreviousPOI();
         }
     }
+    public bool TriggerByTag(string _tag)
+    {
+        bool _test = false;
+        foreach (pointOfInterest _poi in POIs)
+        {
+            if (_poi.trigger == _tag)
+            {
+                UpdateCurrentPOI(_poi.index);
+                _test = true;
+            }
+        }
+        return _test;
+    }
     public void UpdateCurrentPOI(int _index)
     {
         if (_index < POIs.Length)
@@ -124,6 +137,8 @@ public class cameraController : MonoBehaviour
 public class pointOfInterest
 {
     public string name;
+    public int index;
+    public string trigger;
     public bool overrideCameraTarget;//if enabled, camera target will lerp to override target
     public Transform target;
     public bool timedInterest; //if enabled, camera look at target is reset to master after lookAtTimer reaches 0

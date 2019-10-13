@@ -8,27 +8,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eyes
-    second: {fileID: 2100000, guid: 9515f2e6f3aa34b87b52e4cc878f684a, type: 2}
+    second: {fileID: 2100000, guid: 5edb1b44644524c69a3117110615ca38, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hoofs
-    second: {fileID: 2100000, guid: da88023ca4f214fd8b33484d78b185d4, type: 2}
+    second: {fileID: 2100000, guid: 5edb1b44644524c69a3117110615ca38, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hoofs.004
-    second: {fileID: 2100000, guid: 1aca8d15b300c4e6ca575ab32b38f151, type: 2}
+    second: {fileID: 2100000, guid: 5edb1b44644524c69a3117110615ca38, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hoofs.005
-    second: {fileID: 2100000, guid: 80b0155f780484431aa5d0c4ccb1c78b, type: 2}
+    second: {fileID: 2100000, guid: 5edb1b44644524c69a3117110615ca38, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hoofs.006
-    second: {fileID: 2100000, guid: cd6d6d9801bcc4b1da362bb1ede4d136, type: 2}
+    second: {fileID: 2100000, guid: 5edb1b44644524c69a3117110615ca38, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -38,17 +38,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: LegSkin.004
-    second: {fileID: 2100000, guid: 586d71a1d310443d5a77ad690743efcb, type: 2}
+    second: {fileID: 2100000, guid: dfd6fe0659bd84831bdbac94ac32b5e0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: LegSkin.005
-    second: {fileID: 2100000, guid: bb0cb86809d8a4a17b4b9d070884de69, type: 2}
+    second: {fileID: 2100000, guid: dfd6fe0659bd84831bdbac94ac32b5e0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: LegSkin.006
-    second: {fileID: 2100000, guid: 8c3c5f554260f4068984b6f590691b5f, type: 2}
+    second: {fileID: 2100000, guid: dfd6fe0659bd84831bdbac94ac32b5e0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -58,7 +58,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Wool
-    second: {fileID: 2100000, guid: ae0a6849d91974528bc3b85667f886b5, type: 2}
+    second: {fileID: 2100000, guid: 3300a3fd10e3f47dc82fc756fbd294bf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -68,7 +68,7 @@ ModelImporter:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

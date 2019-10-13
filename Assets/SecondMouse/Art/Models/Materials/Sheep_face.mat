@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sheep_face
-  m_Shader: {fileID: -6465566751694194690, guid: bd86d1814e8e74857b90f119e54d6b81,
+  m_Shader: {fileID: -6465566751694194690, guid: d3f7cfb9e08384eb6a5ae6ce0c6fc227,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_E7DAA22B_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 86c61a49b3d0c4323b668e7d52e623d2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0bd76dc43587b4ab48986f885f0039db, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:

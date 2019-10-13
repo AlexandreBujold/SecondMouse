@@ -5,9 +5,10 @@ using UnityEditor;
 
 public class PlatformSpawner : MonoBehaviour
 {
-    public bool TestGeneration = false;
-    [Space(50)]
     [Header("Generation Settings")]
+    public float startDelay = 20f;
+    public bool spawnAnotherSpawnerAtEndOfCourse = false;
+    public bool ResetValues = false;
     [Range(0, 5f)]
     public float tickRate = 1f;
     public int platformCount = 20;
@@ -15,6 +16,7 @@ public class PlatformSpawner : MonoBehaviour
     public Vector2 newHeadingAngle = new Vector2(90f, 45f);
     [Tooltip("A weight of 1 will make it so that the course heading matches the newest heading, a weight of 0 will keep the course heading as is. A weight in between will add that % to the course heading.")]
     public Vector3 newHeadingWeight;
+    public bool randomizeHeading = false;
     [Space]
     public Vector3 minimumDistanceBetweenPlatforms = Vector3.one;
     public Vector3 maximumDistanceBetweenPlatforms = Vector3.one * 10f;
@@ -32,8 +34,11 @@ public class PlatformSpawner : MonoBehaviour
     public Vector3 courseHeading = Vector3.forward;
     private Vector3 originalCourseHeading;
 
-    [Header("Lists")]
+    public bool TestGeneration = false;
+
+    [Header("Lists & References")]
     [Space]
+    public GameObject platformSpawnerPrefab;
     public List<Vector3> platformPositions;
     public List<Transform> platforms;
     [Space]
@@ -50,16 +55,35 @@ public class PlatformSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPos = transform.position;
+
+
+        if (randomizeHeading)
+        {
+            courseHeading = new Vector3(Random.Range(-1f, 1f), 1, 1);
+        }
+
+        originalCourseHeading = courseHeading;
+
         if (courseCreated == false && TestGeneration == false)
         {
             StartCoroutine(CreateCourse(true, true));
         }
-        if (tickRate <= 0)
+        if (this.tickRate <= 0)
         {
-            tickRate = 0;
+            this.tickRate = 0;
         }
-        startPos = transform.position;
-        originalCourseHeading = courseHeading;
+
+        if (this.startDelay == 0)
+        {
+            this.startDelay = 0.1f;
+        }
+
+        if (ResetValues)
+        {
+            startDelay = 20f;
+            tickRate = 0.1f;
+        }
     }
 
     // Update is called once per frame
@@ -88,6 +112,7 @@ public class PlatformSpawner : MonoBehaviour
 
     public IEnumerator CreateCourse(bool randomizePlatforms, bool removeExisting)
     {
+        yield return new WaitForSeconds(startDelay);
         if (removeExisting)
         {
             RemoveAnyExistingCourse();
@@ -105,12 +130,19 @@ public class PlatformSpawner : MonoBehaviour
             {
                 if (platformsCreated == false)
                 {
+                    Vector3 lastPos = Vector3.zero;
                     foreach (Vector3 pos in platformPositions)
                     {
                         CreatePlatform(pos, randomizePlatforms);
+                        lastPos = pos;
                         yield return new WaitForSeconds(tickRate);
                     }
+
                     platformsCreated = true;
+                    if (spawnAnotherSpawnerAtEndOfCourse)
+                    {
+                        SpawnSpawner(lastPos);
+                    }
                 }
             }
 
@@ -183,13 +215,24 @@ public class PlatformSpawner : MonoBehaviour
         courseHeading = newHeading;
     }
 
+    public GameObject SpawnSpawner(Vector3 pos)
+    {
+        if (platformSpawnerPrefab != null)
+        {
+            Quaternion randomRotation = Random.rotation;
+            randomRotation = new Quaternion(0, randomRotation.y, 0, randomRotation.w);
+            return Instantiate(platformSpawnerPrefab, pos, randomRotation, transform.parent);
+        }
+        return null;
+    }
+
     public IEnumerator CalculatePositions(float amount, int startIndex)
     {
         if (platformPositions.Count >= startIndex && startIndex != 0) //Start index out of bounds, go to last item in collection
         {
             startIndex = platformPositions.Count - 1;
         }
-        Vector3 originalHeading = courseHeading;
+
         //Iterate until a position count of amount has been created
         for (int i = 0; i < amount; i++)
         {
@@ -201,7 +244,7 @@ public class PlatformSpawner : MonoBehaviour
                 //Re run this loop - reset i to 0
                 i = 0;
                 platformPositions.RemoveRange(startIndex, platformPositions.Count);
-                currentHeading = originalHeading;
+                currentHeading = originalCourseHeading;
             }
 
             //Get the proper index so we know its all in order

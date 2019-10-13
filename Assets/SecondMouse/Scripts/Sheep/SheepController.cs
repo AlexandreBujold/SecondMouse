@@ -244,6 +244,15 @@ public class SheepController : MonoBehaviour
         {
             AddBounceForce(maxBounceVelocity);
             AddMovementStack();
+            Platform platform = other.gameObject.GetComponent<Platform>();
+            if (platform != null)
+            {
+                if (platform.landedOn == false)
+                {
+                    platform.OnLanded.Invoke();
+                    ScoreManager.instance.AddScore();
+                }
+            }
         }
     }
     #endregion

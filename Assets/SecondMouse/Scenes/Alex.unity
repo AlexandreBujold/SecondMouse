@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.23236844, g: 0.23554417, b: 0.27230176, a: 1}
+  m_IndirectSpecularColor: {r: 0.29535794, g: 0.28946158, b: 0.31123054, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0518f1409775c46bb35ad9d9c54c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TestGeneration: 1
+  TestGeneration: 0
   tickRate: 0.01
   platformCount: 200
   newHeadingAngle: {x: 120, y: 35}
@@ -1652,6 +1652,7 @@ GameObject:
   - component: {fileID: 1514412171}
   - component: {fileID: 1514412168}
   - component: {fileID: 1514412172}
+  - component: {fileID: 1514412174}
   m_Layer: 0
   m_Name: Sheep
   m_TagString: Player
@@ -1787,6 +1788,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1514412174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514412167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!1 &1545759531
 GameObject:
   m_ObjectHideFlags: 0

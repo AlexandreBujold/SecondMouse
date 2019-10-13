@@ -83,13 +83,13 @@ public class Platform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Instantiate(particleEffect, transform.position, Quaternion.identity);
+
             OnLanded.Invoke();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
+        Instantiate(particleEffect, transform.position, Quaternion.identity);
     }
 }

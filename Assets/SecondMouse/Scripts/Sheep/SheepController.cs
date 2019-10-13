@@ -130,7 +130,7 @@ public class SheepController : MonoBehaviour
 
         if (bounceUpTotal != 0)
         {
-            AddBounceSpeed(bounceUpTotal);
+            AddBounceForce(bounceUpTotal);
         }
 
         ClampBounce();
@@ -186,13 +186,23 @@ public class SheepController : MonoBehaviour
 
     #region Bouncing
 
+    public void AddBounceForce(float amount)
+    {
+        if (m_rb != null)
+        {
+            amount = Mathf.Clamp(amount, -maxBounceVelocity, maxBounceVelocity);
+            Vector3 force = new Vector3(0, amount, 0);
+            m_rb.AddForceAtPosition(force, m_rb.position, ForceMode.VelocityChange);
+        }
+    }
+
     public void AddBounceSpeed(float amount)
     {
         if (m_rb != null)
         {
             amount = Mathf.Clamp(amount, -maxBounceVelocity, maxBounceVelocity);
-            Vector3 force = new Vector3(0, Mathf.Sign(m_rb.velocity.y) * amount, 0);
-            m_rb.AddForceAtPosition(force, m_rb.position, ForceMode.VelocityChange);
+            Vector3 speed = new Vector3(0, Mathf.Sign(m_rb.velocity.y) * amount, 0);
+            m_rb.AddForce(speed, ForceMode.Acceleration);
         }
     }
 
@@ -209,7 +219,7 @@ public class SheepController : MonoBehaviour
         maxBounceVelocity = maxVelocity;
         if (m_rb != null)
         {
-            AddBounceSpeed(verticalForceOnBounce);
+            AddBounceForce(verticalForceOnBounce);
         }
         Invoke("ResetMaxBounceVelocity", time);
     }
@@ -232,6 +242,7 @@ public class SheepController : MonoBehaviour
     {
         if (other.CompareTag("Platform"))
         {
+            AddBounceForce(maxBounceVelocity);
             AddMovementStack();
         }
     }

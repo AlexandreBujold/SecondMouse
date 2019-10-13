@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class Platform : MonoBehaviour
 {
     public UnityEvent OnLanded = new UnityEvent();
+    public string landEffectPath;
 
     public bool landedOn;
     [Space]
@@ -50,6 +51,7 @@ public class Platform : MonoBehaviour
             {
                 Destroy(gameObject, 2f);
             }
+            FMODUnity.RuntimeManager.PlayOneShot(landEffectPath, transform.position);
         }
     }
 

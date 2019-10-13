@@ -9,7 +9,10 @@ public class SheepController : MonoBehaviour
     Rigidbody m_rb;
     public float topSpeed = 5f;
     public float maxBounceVelocity = 10f;
+    public float slowDownRate=1f;
     public Vector3 currentVelocity;
+
+    private Vector2 _initialDisplacement;
 
     [Space]
     //Camera Movement & Player Rotation
@@ -35,23 +38,30 @@ public class SheepController : MonoBehaviour
 
         //Rotate Sheep to face same direction as Camera
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, m_cameraPivot.transform.eulerAngles.y, m_cameraPivot.rotation.eulerAngles.z);
-
-        //Player Movement
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        input = Vector2.ClampMagnitude(input, topSpeed);
-
         Vector3 camF = m_cam.forward;
         Vector3 camR = m_cam.right;
-
         camF.y = 0;
         camR.y = 0;
         camF = camF.normalized;
         camR = camR.normalized;
+        //Player Movement
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        input = Vector2.ClampMagnitude(input, 1);
+        if (input.magnitude>.1f)
+        {
+            Debug.Log("Input:ON: " + _initialDisplacement);
+            _initialDisplacement = input;
+            transform.position += (camF * input.y + camR * input.x) * Time.deltaTime * topSpeed;
+            //m_rb.velocity += (camF * input.y + camR * input.x) * Time.deltaTime * speed.x;
+        }
+        else
+        {
+            Debug.Log("Input:OFF: " + _initialDisplacement);
+            Vector2 _slowDown = Vector2.Lerp(new Vector2(_initialDisplacement.x, _initialDisplacement.y), Vector2.zero, Time.deltaTime * slowDownRate);
+            _initialDisplacement = _slowDown;
+            transform.position += (camF * _slowDown.y + camR * _slowDown.x) * Time.deltaTime * topSpeed;
+        }
 
-        //m_rb.velocity = Vector3.Lerp(camF * input.y + camR * input.x, m_rb.velocity, topSpeed);
-
-        transform.position += (camF * input.y + camR * input.x) * Time.deltaTime * topSpeed;
-        //m_rb.velocity += (camF * input.y + camR * input.x) * Time.deltaTime * speed.x;
 
         AdjustBounce();
         currentVelocity = m_rb.velocity;

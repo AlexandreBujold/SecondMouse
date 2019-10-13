@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
+  - Spawner
+  - CloudPower
+  - JumpPower
+  - ScorePower
   layers:
   - Default
   - TransparentFX

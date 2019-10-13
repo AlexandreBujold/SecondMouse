@@ -61,7 +61,10 @@ public class SheepController : MonoBehaviour
             //Debug.Log("Input:OFF: " + _initialDisplacement);
             Vector2 _slowDown = Vector2.Lerp(new Vector2(_initialDisplacement.x, _initialDisplacement.y), Vector2.zero, Time.deltaTime * slowDownRate);
             _initialDisplacement = _slowDown;
-            transform.position += (camF * _slowDown.y + camR * _slowDown.x) * Time.deltaTime * topSpeed;
+            //transform.position += (camF * _slowDown.y + camR * _slowDown.x) * Time.deltaTime * topSpeed;
+            transform.position += (camF * topSpeed + camR * topSpeed) * Time.deltaTime;
+            //Vector3 displacement = (camF * topSpeed + camR * topSpeed) * Time.fixedDeltaTime;
+            //m_rb.AddForce(displacement, ForceMode.VelocityChange);
         }
 
 
@@ -83,7 +86,6 @@ public class SheepController : MonoBehaviour
         maxBounceVelocity = maxVelocity;
         if (m_rb != null)
         {
-            Debug.Log("Yes");
             m_rb.AddForce(0, 40f, 0, ForceMode.VelocityChange);
         }
         Invoke("ResetMaxBounceVelocity", time);

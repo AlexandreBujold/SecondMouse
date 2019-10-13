@@ -1569,6 +1569,13 @@ MonoBehaviour:
   mouseHorizontalSensitivity: 180
   mouseVerticalSensitivity: 60
   currentVelocity: {x: 0, y: 0, z: 0}
+  speedUpTotal: 0
+  bounceUpTotal: 0
+  speedStacks: 0
+  stackDecayRate: 1
+  speedIncreasePerStack: 3
+  bounceIncreasePerStack: 1
+  maxStacks: 5
   m_cameraPivot: {fileID: 1605062977}
   m_cam: {fileID: 1976829959}
 --- !u!54 &1514412169

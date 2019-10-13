@@ -132,7 +132,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   landedOn: 0
-  fallOnLand: 0
+  fallOnLand: 1
   destroyOnLand: 0
 --- !u!1 &2153240088291416737
 GameObject:

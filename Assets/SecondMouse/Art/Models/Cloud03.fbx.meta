@@ -1,69 +1,9 @@
 fileFormatVersion: 2
-guid: 9a9c01a3620144c9aac7b1776e2eefdd
+guid: 8bc5cec19817141dea12d38b9842588d
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Eyes
-    second: {fileID: 2100000, guid: 9515f2e6f3aa34b87b52e4cc878f684a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hoofs
-    second: {fileID: 2100000, guid: da88023ca4f214fd8b33484d78b185d4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hoofs.004
-    second: {fileID: 2100000, guid: 1aca8d15b300c4e6ca575ab32b38f151, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hoofs.005
-    second: {fileID: 2100000, guid: 80b0155f780484431aa5d0c4ccb1c78b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Hoofs.006
-    second: {fileID: 2100000, guid: cd6d6d9801bcc4b1da362bb1ede4d136, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LegSkin.002
-    second: {fileID: 2100000, guid: dfd6fe0659bd84831bdbac94ac32b5e0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LegSkin.004
-    second: {fileID: 2100000, guid: 586d71a1d310443d5a77ad690743efcb, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LegSkin.005
-    second: {fileID: 2100000, guid: bb0cb86809d8a4a17b4b9d070884de69, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LegSkin.006
-    second: {fileID: 2100000, guid: 8c3c5f554260f4068984b6f590691b5f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Skin
-    second: {fileID: 2100000, guid: 401897de5ba13451b85592d53e8bab01, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wool
-    second: {fileID: 2100000, guid: ae0a6849d91974528bc3b85667f886b5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Woolhead
-    second: {fileID: 2100000, guid: f6e68760735e44c799a5b64f20d23561, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

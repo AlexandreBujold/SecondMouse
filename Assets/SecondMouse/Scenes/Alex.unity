@@ -1305,9 +1305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae345f3d0c4f5d41a6cdb608ca9df70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topSpeed: 8
-  maxBounceVelocity: 20
-  slowDownRate: 2
+  topSpeed: 15
+  maxBounceVelocity: 10
+  slowDownRate: 0.5
   currentVelocity: {x: 0, y: 0, z: 0}
   m_cameraPivot: {fileID: 1605062977}
   m_cam: {fileID: 1976829959}

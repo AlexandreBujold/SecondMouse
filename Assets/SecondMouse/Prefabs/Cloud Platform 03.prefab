@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6643136411599997454}
   - component: {fileID: 1084699238436861687}
   - component: {fileID: 1878853759785427316}
+  - component: {fileID: 7796582839510891156}
+  - component: {fileID: 8402307404197637660}
   m_Layer: 0
   m_Name: Cloud Mesh & Collider
   m_TagString: Platform
@@ -97,6 +99,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.05, z: 0.028}
   m_Center: {x: 0.01, y: 0.02, z: -0.007}
+--- !u!54 &7796582839510891156
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671246925773947435}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &8402307404197637660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671246925773947435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4835bffdcc2cd014cac524020b394dfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnLanded:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  landedOn: 0
+  fallOnLand: 1
+  destroyOnLand: 0
 --- !u!1 &4323959038366396279
 GameObject:
   m_ObjectHideFlags: 0

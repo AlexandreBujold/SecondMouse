@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class SheepController : MonoBehaviour
 {
+    #region Variables
 
-    Rigidbody m_rb;
     [Header("Movement Options")]
     public float constantSpeed = 5f;
     public float maxBounceVelocity = 10f;
@@ -15,23 +15,37 @@ public class SheepController : MonoBehaviour
     public float mouseHorizontalSensitivity = 180;
     [Range(0, 180)]
     public float mouseVerticalSensitivity = 180;
-    //public float slowDownRate = 1f;
     [Space]
     [Header("Calculated Velocity")]
     public Vector3 currentVelocity;
 
     private Vector2 _initialDisplacement;
 
+    //Speed up Factors
+    [Header("Speed Up Settings")]
+    public float speedUpTotal = 0;
+    public float bounceUpTotal = 0;
+    [Space]
+    public int speedStacks = 0;
+    public float stackDecayRate = 1f;
+
+    public float speedIncreasePerStack = 3f;
+    public float bounceIncreasePerStack = 4f;
+    [Range(0, 10)]
+    public int maxStacks = 5;
+    private List<Coroutine> speedStacksActive = new List<Coroutine>();
+
     [Space]
     [Header("References")]
     //Camera Movement & Player Rotation
     public Transform m_cameraPivot;
     public Transform m_cam;
+    [HideInInspector]
+    Rigidbody m_rb;
     private float heading = 0;
     private float originalBounceVelocity;
 
-    //Speed up Factors
-
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +56,14 @@ public class SheepController : MonoBehaviour
         }
         originalBounceVelocity = maxBounceVelocity;
 
+        //* Cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        // for (int i = 0; i < maxStacks; i++)
+        // {
+        //     Invoke("AddMovementStack", 1f + i);
+        // }
     }
 
     // Update is called once per frame
@@ -84,6 +104,7 @@ public class SheepController : MonoBehaviour
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         input = Vector2.ClampMagnitude(input, 1);
 
+        #region Mustafa Old Code
         //? Mustafa code for slowing down
         // if (input.magnitude > .1f)
         // {
@@ -100,23 +121,77 @@ public class SheepController : MonoBehaviour
         //     //_initialDisplacement = _slowDown;
         //     //transform.position += (camF * _slowDown.y + camR * _slowDown.x) * Time.deltaTime * constantSpeed;
         // }
-
+        #endregion
         //Calculates velocity change to go forwards
-        Vector3 displacement = (camF * constantSpeed) * Time.deltaTime;
+        Vector3 displacement = (camF * (constantSpeed + speedUpTotal)) * Time.deltaTime;
         //transform.position += displacement;
         displacement = new Vector3(displacement.x, 0, displacement.z);
         m_rb.AddForceAtPosition(displacement, m_rb.position, ForceMode.VelocityChange);
 
+        if (bounceUpTotal != 0)
+        {
+            AddBounceSpeed(bounceUpTotal);
+        }
+
         ClampBounce();
         currentVelocity = m_rb.velocity;
+        speedStacks = speedStacksActive.Count;
     }
 
-    public void AddBounceForce(float amount)
+    #region Speed Up Logic
+
+    public IEnumerator SpeedStack()
+    {
+        float speedIncrease = speedIncreasePerStack;
+        float bounceIncrease = bounceIncreasePerStack;
+
+        speedUpTotal += speedIncrease;
+        bounceUpTotal += bounceIncrease;
+        while (speedIncrease > 0 && bounceIncrease > 0)
+        {
+            float decay = stackDecayRate * Time.deltaTime;
+            speedUpTotal = Mathf.Clamp(speedUpTotal - decay, 0, 10000);
+            bounceUpTotal = Mathf.Clamp(speedUpTotal - decay, 0, 10000);
+            yield return new WaitForFixedUpdate();
+        }
+        yield break;
+    }
+
+    public IEnumerator RemoveCoroutine(float time, Coroutine target)
+    {
+        yield return new WaitForSeconds(time);
+        speedStacksActive.Remove(target);
+    }
+
+    public bool AddMovementStack()
+    {
+        if (speedStacksActive.Count < maxStacks)
+        {
+            Coroutine newStack = StartCoroutine(SpeedStack());
+            speedStacksActive.Add(newStack);
+            //Time average divided by number of times run in a second to get the real world time
+            float coroutineRuntimeAverage = ((speedIncreasePerStack + bounceIncreasePerStack) / 2) / (1 / Time.deltaTime);
+            StartCoroutine(RemoveCoroutine(coroutineRuntimeAverage, newStack));
+            return true;
+        }
+        return false;
+    }
+
+    public bool RemoveStack(Coroutine stack)
+    {
+        return speedStacksActive.Remove(stack);
+    }
+
+    #endregion
+
+    #region Bouncing
+
+    public void AddBounceSpeed(float amount)
     {
         if (m_rb != null)
         {
             amount = Mathf.Clamp(amount, -maxBounceVelocity, maxBounceVelocity);
-            Vector3 force = new Vector3(0, amount, 0);
+            Vector3 force = new Vector3(0, Mathf.Sign(m_rb.velocity.y) * amount, 0);
             m_rb.AddForceAtPosition(force, m_rb.position, ForceMode.VelocityChange);
         }
     }
@@ -134,7 +209,7 @@ public class SheepController : MonoBehaviour
         maxBounceVelocity = maxVelocity;
         if (m_rb != null)
         {
-            AddBounceForce(verticalForceOnBounce);
+            AddBounceSpeed(verticalForceOnBounce);
         }
         Invoke("ResetMaxBounceVelocity", time);
     }
@@ -143,6 +218,10 @@ public class SheepController : MonoBehaviour
     {
         maxBounceVelocity = originalBounceVelocity;
     }
+
+    #endregion
+
+    #region Collisions & Gizmos
 
     private void OnDrawGizmos()
     {
@@ -153,25 +232,8 @@ public class SheepController : MonoBehaviour
     {
         if (other.CompareTag("Platform"))
         {
-            AddBounceForce(verticalForceOnBounce);
+            AddMovementStack();
         }
     }
-
-    /*
-
-    IEnumerator RotateBy(float amount, float lerpTime) //Rotate smoothly by amount over lerpTime
-	{
-		float initialRotation = Mathf.FloorToInt(transform.eulerAngles.y);
-		float targetRotation =  Mathf.FloorToInt(transform.eulerAngles.y + amount);
-		for (float t = 0; t <= 1; t+= 1 / (lerpTime / Time.deltaTime))
-		{
-			transform.eulerAngles = new Vector3(0, Mathf.Lerp(initialRotation, targetRotation, t) , 0);
-			yield return null;
-		}
-		transform.eulerAngles = new Vector3(0,targetRotation, 0);
-        rotate = null;
-	}
-    
-    
-     */
+    #endregion
 }

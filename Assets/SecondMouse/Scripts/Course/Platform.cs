@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody))]
 public class Platform : MonoBehaviour
 {
-    public UnityEvent OnLanded;
+    public UnityEvent OnLanded = new UnityEvent();
 
     public bool landedOn;
     [Space]

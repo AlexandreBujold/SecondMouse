@@ -15,7 +15,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMODstudioProject\SecondMouseSound\SecondMouseSound.fspro
+  sourceProjectPath: FMODstudioProject/SecondMouseSound/SecondMouseSound.fspro
   sourceBankPath: FMODstudioProject\SecondMouseSound\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1

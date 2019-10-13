@@ -31,7 +31,7 @@ public class Platform : MonoBehaviour
     {
         if (m_rb != null)
         {
-            m_rb.isKinematic = true;
+            m_rb.isKinematic = false;
             Destroy(gameObject, 5f);
         }
     }

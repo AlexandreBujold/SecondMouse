@@ -10,6 +10,7 @@ public class AlternativeController : MonoBehaviour
     public float jumpForce = 10f;
     public float slowDownFactor = 1f;
     public float turnSpeed = 3f;
+    public bool isGrounded;
     public Vector3 forceDirection;
     public Vector3 currentVelocity;
 
@@ -39,7 +40,7 @@ public class AlternativeController : MonoBehaviour
         RotateCameraAndSheep();
         forceDirection = ReadInput();
         ApplyPhysics(forceDirection);
-        AdjustSpeed(topSpeed);
+        //AdjustSpeed(topSpeed);
     }
 
     private void AdjustSpeed(float topSpeed)
@@ -50,33 +51,30 @@ public class AlternativeController : MonoBehaviour
 
     private void ApplyPhysics(Vector3 _forceDirection)
     {
-        if (forceDirection != Vector3.zero)
+        if (isGrounded)
         {
+            isGrounded = false;
             m_rb.AddForce(_forceDirection * jumpForce, ForceMode.Impulse);
-            Debug.Log("Force applied: " + _forceDirection);
+            Debug.Log("Force applied: " + _forceDirection*jumpForce);
         }
         else
         {
-            m_rb.velocity = Vector3.Lerp(m_rb.velocity, Vector3.zero, slowDownFactor * Time.deltaTime);
+            //m_rb.velocity = Vector3.Lerp(m_rb.velocity, Vector3.zero, slowDownFactor * Time.deltaTime);
         }
     }
 
     private Vector3 ReadInput()
     {
         Vector3 finalInput = Vector3.zero;
-        //Player Movement
-        if (CheckGround())
-        {
-            Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 1, Input.GetAxisRaw("Vertical"));
-            Vector3 camF = m_cam.forward;
-            Vector3 camR = m_cam.right;
-            camF.y = 0;
-            camR.y = 0;
-            camF = camF.normalized;
-            camR = camR.normalized;
-            finalInput = (camF * input.z + camR * input.x + input).normalized;
-            Debug.Log("Final Input: " + finalInput);
-        }
+        Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 1, Input.GetAxisRaw("Vertical"));
+        Vector3 camF = m_cam.forward;
+        Vector3 camR = m_cam.right;
+        camF.y = 0;
+        camR.y = 0;
+        camF = camF.normalized;
+        camR = camR.normalized;
+        finalInput = (camF * input.z + camR * input.x + input);
+        Debug.Log("Final Input: " + finalInput);
         return finalInput;
     }
 
@@ -95,15 +93,13 @@ public class AlternativeController : MonoBehaviour
         {
             Debug.DrawRay(transform.position, -transform.up * hit.distance, Color.green);
             Debug.Log("Hit " + groundTag);
-            return true;
+            isGrounded=true;
         }
         else
         {
             Debug.DrawRay(transform.position, -transform.up * hit.distance, Color.red);
             Debug.Log("Did not hit " + groundTag);
-            forceDirection = Vector3.zero;
-            return false;
         }
-
+        return isGrounded;
     }
 }

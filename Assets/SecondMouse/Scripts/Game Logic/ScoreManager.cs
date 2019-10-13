@@ -7,12 +7,13 @@ public class ScoreManager : MonoBehaviour
 {
 
     public static ScoreManager instance;
+    public int scorePerCloud = 10;
     public float constantMultiplier = 1f;
     private float originalMultiplier;
 
     public UnityEvent ScoreIncrease = new UnityEvent();
 
-    TMPro.TextMeshPro scoreText;
+    public TMPro.TextMeshProUGUI scoreText;
 
 
     private void Awake()
@@ -64,6 +65,11 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int amount)
     {
         AddScore(amount, constantMultiplier);
+    }
+
+    public void AddScore()
+    {
+        AddScore(scorePerCloud, constantMultiplier);
     }
 
     public void AddScore(int amount, float multiplier)

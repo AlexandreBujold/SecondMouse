@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7596562958343793605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7596562958343793603}
+  - component: {fileID: 7596562958343793604}
+  m_Layer: 0
+  m_Name: Platform Spawner
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7596562958343793603
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596562958343793605}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7596562958343793604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7596562958343793605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f0518f1409775c46bb35ad9d9c54c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 20
+  spawnAnotherSpawnerAtEndOfCourse: 1
+  ResetValues: 1
+  tickRate: 0.1
+  platformCount: 50
+  newHeadingAngle: {x: 80, y: 60.48}
+  newHeadingWeight: {x: 0.18, y: 0.9, z: 0}
+  randomizeHeading: 1
+  minimumDistanceBetweenPlatforms: {x: 0, y: 8, z: 10}
+  maximumDistanceBetweenPlatforms: {x: 15, y: 15, z: 15}
+  randomMaxValue: 2
+  randomXChance: 0.12
+  randomYChance: 0.1
+  courseHeading: {x: 0, y: 1, z: 1}
+  TestGeneration: 0
+  platformSpawnerPrefab: {fileID: 8167370333910996046, guid: d15a79d4f50fb14449faab96e37cacc2,
+    type: 3}
+  platformPositions:
+  - {x: 0.97350985, y: 18.001928, z: 18.637188}
+  - {x: -1.8215501, y: 38.06629, z: 25.757687}
+  - {x: -1.9815977, y: 60.49746, z: 24.95861}
+  platforms: []
+  platformPrefabs:
+  - {fileID: 2153240088291416737, guid: 6abfe6ae4f0129e49ad4c9bd8fcf9d04, type: 3}
+  - {fileID: 2394102290691882632, guid: 71e71e8dbeb2c2c438a476afea3ec09e, type: 3}
+  - {fileID: 4323959038366396279, guid: 089b8b97f2c61f7499daed48f8e9e507, type: 3}

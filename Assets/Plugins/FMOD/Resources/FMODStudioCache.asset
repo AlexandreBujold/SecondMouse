@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: event:/Music/MainTheme
   guid: c7ad400f2b018546acda514310d6d0d5
   Banks:
-  - {fileID: 1084306760874594287}
+  - {fileID: -824657977561879900}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -123,6 +123,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-824657977561879900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637065164069511082
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-805437152819019671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +156,7 @@ MonoBehaviour:
   Path: event:/Environmental/Dreamscape
   guid: a37b8f61ed810e428340d2a28777ebf2
   Banks:
-  - {fileID: 1084306760874594287}
+  - {fileID: -824657977561879900}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -146,6 +164,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
+--- !u!114 &-254525893654830906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637065114220842422
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 584773640872271815}
-  - {fileID: 1084306760874594287}
+  - {fileID: -824657977561879900}
   EditorEvents:
   - {fileID: 5291693242582062473}
   - {fileID: 1496345691688147570}
@@ -170,10 +206,10 @@ MonoBehaviour:
   - {fileID: -3803159526823928757}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1084306760874594287}
+  - {fileID: -824657977561879900}
   StringsBanks:
   - {fileID: 584773640872271815}
-  stringsBankWriteTime: 637065040677250027
+  stringsBankWriteTime: 637065164069591000
   cacheVersion: 3
 --- !u!114 &584773640872271815
 MonoBehaviour:
@@ -189,11 +225,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637065040677250027
+  lastModified: 637065164069591000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1154
+    Value: 1214
   Exists: 1
 --- !u!114 &1084306760874594287
 MonoBehaviour:
@@ -228,7 +264,7 @@ MonoBehaviour:
   Path: event:/SoundFX/BounceOnCloud
   guid: 1e052f82a810144d96ba3e6707448043
   Banks:
-  - {fileID: 1084306760874594287}
+  - {fileID: -824657977561879900}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -310,7 +346,7 @@ MonoBehaviour:
   Path: event:/User Interface/MenuSelect
   guid: 79525a98a1c3be40ae7bda0fd7d7fa06
   Banks:
-  - {fileID: 1084306760874594287}
+  - {fileID: -824657977561879900}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -341,6 +377,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 12469
+--- !u!114 &5489196760172591413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637065162633770099
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &6771951614995259056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,7 +451,7 @@ MonoBehaviour:
   Path: event:/SoundFX/CollectItem
   guid: bb6d854f41330f46a00493e48a3ab5d6
   Banks:
-  - {fileID: 1084306760874594287}
+  - {fileID: -824657977561879900}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

@@ -138,7 +138,7 @@ MonoBehaviour:
   Path: event:/Music/MainTheme
   guid: c7ad400f2b018546acda514310d6d0d5
   Banks:
-  - {fileID: 7745940208471893045}
+  - {fileID: 990835264446232673}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   Path: event:/Environmental/Dreamscape
   guid: a37b8f61ed810e428340d2a28777ebf2
   Banks:
-  - {fileID: 7745940208471893045}
+  - {fileID: 990835264446232673}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 584773640872271815}
-  - {fileID: 7745940208471893045}
+  - {fileID: 990835264446232673}
   EditorEvents:
   - {fileID: 5291693242582062473}
   - {fileID: 1496345691688147570}
@@ -245,14 +245,12 @@ MonoBehaviour:
   - {fileID: -805437152819019671}
   - {fileID: 7114356741072523868}
   - {fileID: -3803159526823928757}
-  - {fileID: -6042643235609804766}
-  - {fileID: 8997581678335183238}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 7745940208471893045}
+  - {fileID: 990835264446232673}
   StringsBanks:
   - {fileID: 584773640872271815}
-  stringsBankWriteTime: 637065284896357692
+  stringsBankWriteTime: 637065217666874174
   cacheVersion: 3
 --- !u!114 &584773640872271815
 MonoBehaviour:
@@ -268,11 +266,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637065284896357692
+  lastModified: 637065217666874174
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1302
+    Value: 1214
+  Exists: 1
+--- !u!114 &990835264446232673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637065217666714603
+  LoadResult: 0
+  FileSizes: []
   Exists: 1
 --- !u!114 &1084306760874594287
 MonoBehaviour:
@@ -307,7 +323,7 @@ MonoBehaviour:
   Path: event:/SoundFX/BounceOnCloud
   guid: 1e052f82a810144d96ba3e6707448043
   Banks:
-  - {fileID: 7745940208471893045}
+  - {fileID: 990835264446232673}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -407,7 +423,7 @@ MonoBehaviour:
   Path: event:/User Interface/MenuSelect
   guid: 79525a98a1c3be40ae7bda0fd7d7fa06
   Banks:
-  - {fileID: 7745940208471893045}
+  - {fileID: 990835264446232673}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -530,7 +546,7 @@ MonoBehaviour:
   Path: event:/SoundFX/CollectItem
   guid: bb6d854f41330f46a00493e48a3ab5d6
   Banks:
-  - {fileID: 7745940208471893045}
+  - {fileID: 990835264446232673}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

@@ -201,7 +201,6 @@ public class PlatformSpawner : MonoBehaviour
                 //Re run this loop - reset i to 0
                 i = 0;
                 platformPositions.RemoveRange(startIndex, platformPositions.Count);
-                Debug.Log(platformPositions.Count);
                 currentHeading = originalHeading;
             }
 

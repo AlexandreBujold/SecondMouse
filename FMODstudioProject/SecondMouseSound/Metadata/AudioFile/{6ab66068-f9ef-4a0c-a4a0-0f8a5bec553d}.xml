@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{6ab66068-f9ef-4a0c-a4a0-0f8a5bec553d}">
+		<property name="assetPath">
+			<value>Environmental/Kalimba/263885__jarredgibb__kalimba.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>15.128344671201814</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e1cea63a-5ae4-4ebf-826a-13eb0cc0329b}</destination>
+		</relationship>
+	</object>
+</objects>

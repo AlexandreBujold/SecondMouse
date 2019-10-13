@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{24d8db2b-2139-425f-8937-94019a4d1f79}">
+	<object class="AudioFile" id="{e78655bc-28ef-401a-9f2f-7c12f13534b8}">
 		<property name="assetPath">
-			<value>339247__inspectorj__cymbal-14-hard-hit-a.wav</value>
+			<value>Environmental/DistantSheep/383144__zachrau__sheep-bleating.ogg</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>
@@ -11,10 +11,10 @@
 			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>12.469115646258503</value>
+			<value>45.263333333333335</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{e1cea63a-5ae4-4ebf-826a-13eb0cc0329b}</destination>

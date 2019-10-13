@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{dcd9039f-e260-483b-8d21-c31b2d920e70}">
+		<property name="assetPath">
+			<value>Environmental/Kalimba/398969__musicbrain__kalimba-b9-05.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>17.348049886621315</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e1cea63a-5ae4-4ebf-826a-13eb0cc0329b}</destination>
+		</relationship>
+	</object>
+</objects>

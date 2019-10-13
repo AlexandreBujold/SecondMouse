@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{4b7b3b5e-af8a-4474-b103-72ebd46e9479}">
+		<property name="assetPath">
+			<value>Environmental/DistantSheep/321967__n-audioman__sheep-bleat.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.3248979591836734</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e1cea63a-5ae4-4ebf-826a-13eb0cc0329b}</destination>
+		</relationship>
+	</object>
+</objects>

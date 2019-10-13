@@ -48,7 +48,6 @@ public class ScoreManager : MonoBehaviour
         float original = constantMultiplier;
         SetMultiplier(multiplier);
         Invoke("ResetMultiplier", time);
-
     }
 
     private void SetMultiplier(float multiplier)

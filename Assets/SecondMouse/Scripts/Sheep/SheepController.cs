@@ -9,7 +9,7 @@ public class SheepController : MonoBehaviour
     Rigidbody m_rb;
     public float topSpeed = 5f;
     public float maxBounceVelocity = 10f;
-    public float slowDownRate=1f;
+    public float slowDownRate = 1f;
     public Vector3 currentVelocity;
 
     private Vector2 _initialDisplacement;
@@ -19,6 +19,7 @@ public class SheepController : MonoBehaviour
     public Transform m_cameraPivot;
     public Transform m_cam;
     private float heading = 0;
+    private float originalBounceVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class SheepController : MonoBehaviour
         {
             m_rb = GetComponentInChildren<Rigidbody>();
         }
+        originalBounceVelocity = maxBounceVelocity;
     }
 
     // Update is called once per frame
@@ -47,16 +49,16 @@ public class SheepController : MonoBehaviour
         //Player Movement
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         input = Vector2.ClampMagnitude(input, 1);
-        if (input.magnitude>.1f)
+        if (input.magnitude > .1f)
         {
-            Debug.Log("Input:ON: " + _initialDisplacement);
+            //Debug.Log("Input:ON: " + _initialDisplacement);
             _initialDisplacement = input;
             transform.position += (camF * input.y + camR * input.x) * Time.deltaTime * topSpeed;
             //m_rb.velocity += (camF * input.y + camR * input.x) * Time.deltaTime * speed.x;
         }
         else
         {
-            Debug.Log("Input:OFF: " + _initialDisplacement);
+            //Debug.Log("Input:OFF: " + _initialDisplacement);
             Vector2 _slowDown = Vector2.Lerp(new Vector2(_initialDisplacement.x, _initialDisplacement.y), Vector2.zero, Time.deltaTime * slowDownRate);
             _initialDisplacement = _slowDown;
             transform.position += (camF * _slowDown.y + camR * _slowDown.x) * Time.deltaTime * topSpeed;
@@ -75,33 +77,22 @@ public class SheepController : MonoBehaviour
         }
     }
 
-    // public void Decelerate(ref Vector3 cameraForward, ref Vector3 cameraRight, ref Vector2 input)
-    // {
-    //     if (input.x == 0 || input.y == 0)
-    //     {
-    //         if (m_rb.velocity.x >= -0.01f && m_rb.velocity.x <= 0.01f)
-    //         {
-    //             m_rb.velocity = new Vector3(0, m_rb.velocity.y, m_rb.velocity.z);
-    //         }
-    //         else
-    //         {
-    //             m_rb.velocity += (-cameraForward - cameraRight) * Time.deltaTime * speed.x;
-    //         }
-    //     }
+    public void SetTemporaryMaxBounceVelocity(float maxVelocity, float time)
+    {
 
-    //     // if (input.y == 0)
-    //     // {
-    //     //     if (m_rb.velocity.z >= -0.01f && m_rb.velocity.z <= 0.01f)
-    //     //     {
-    //     //         m_rb.velocity = new Vector3(m_rb.velocity.x, m_rb.velocity.y, 0);
-    //     //     }
-    //     //     else
-    //     //     {
-    //     //         m_rb.velocity += (-cameraForward * input.y - cameraRight * input.x) * Time.deltaTime * speed.x;
-    //     //     }
-    //     // }
-    // }
+        maxBounceVelocity = maxVelocity;
+        if (m_rb != null)
+        {
+            Debug.Log("Yes");
+            m_rb.AddForce(0, 40f, 0, ForceMode.VelocityChange);
+        }
+        Invoke("ResetMaxBounceVelocity", time);
+    }
 
+    public void ResetMaxBounceVelocity()
+    {
+        maxBounceVelocity = originalBounceVelocity;
+    }
 
     private void OnDrawGizmos()
     {

@@ -7,7 +7,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Gear
+    second: {fileID: 2100000, guid: fe396e6ef4ce043108bc882d18d93ef2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Ship Body
+    second: {fileID: 2100000, guid: 9bf37134008bf4f67bcfbf72f98cbed4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sides
     second: {fileID: 2100000, guid: 9e14f45a1152d4378982aca4a6233ddb, type: 2}
   materials:
     importMaterials: 1

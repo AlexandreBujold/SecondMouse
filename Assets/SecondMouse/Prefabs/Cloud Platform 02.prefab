@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5518593870040049504}
   - component: {fileID: 4761512582664293177}
   - component: {fileID: 9023032537248818053}
+  - component: {fileID: 3757152110331493956}
   m_Layer: 0
   m_Name: Cloud Mesh & Collider
   m_TagString: Platform
@@ -157,12 +158,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4835bffdcc2cd014cac524020b394dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedSound: event:/SoundFX/BounceOnCloud2D
+  particleEffect: {fileID: 3380579290904957009, guid: 881775c7001172e4ca75266791632af1,
+    type: 3}
   OnLanded:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  landEffectPath: event:/SoundFX/BounceOnCloud
   landedOn: 0
   fallOnLand: 1
   destroyOnLand: 0
+--- !u!114 &3757152110331493956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2796541650375909814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Event: event:/SoundFX/BounceOnCloud2D
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class SheepController : MonoBehaviour
@@ -46,6 +47,8 @@ public class SheepController : MonoBehaviour
     private float originalBounceVelocity;
 
     #endregion
+
+    private float tallestYAchieved;
 
     // Start is called before the first frame update
     void Start()
@@ -136,6 +139,15 @@ public class SheepController : MonoBehaviour
         ClampBounce();
         currentVelocity = m_rb.velocity;
         speedStacks = speedStacksActive.Count;
+
+        if (transform.position.y > tallestYAchieved)
+        {
+            tallestYAchieved = transform.position.y;
+        }
+        if (transform.position.y <= tallestYAchieved - 200)
+        {
+            SceneManager.LoadScene("Lose");
+        }
     }
 
     #region Speed Up Logic

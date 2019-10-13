@@ -83,6 +83,11 @@ public class ScoreManager : MonoBehaviour
         score = 0;
     }
 
+    private void OnDestroy()
+    {
+        AudioManager.instance.score = score;
+    }
+
     public void UpdateScoreText()
     {
         if (scoreText != null)

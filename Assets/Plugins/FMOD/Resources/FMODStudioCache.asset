@@ -158,6 +158,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-7079044230892263104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundFX/UseAbility
+  m_EditorClassIdentifier: 
+  Path: event:/SoundFX/UseAbility
+  guid: 1320c12905b623458c730408b7af50a1
+  Banks:
+  - {fileID: -1269621838977704415}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1124
 --- !u!114 &-7050834266332055655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +256,29 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+  Length: 5000
+--- !u!114 &-6300654489889933527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environmental/Wind
+  m_EditorClassIdentifier: 
+  Path: event:/Environmental/Wind
+  guid: 08bc3d95080d2b4d8765a41d04402ea2
+  Banks:
+  - {fileID: -1269621838977704415}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
   Length: 5000
 --- !u!114 &-6092015372899659523
 MonoBehaviour:
@@ -388,6 +434,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-3903055703112865102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundFX/BounceOnCloud2D
+  m_EditorClassIdentifier: 
+  Path: event:/SoundFX/BounceOnCloud2D
+  guid: 939c3baf344f9545bcde92b8d7b4e1bc
+  Banks:
+  - {fileID: -1269621838977704415}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 7987
 --- !u!114 &-3803159526823928757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +472,7 @@ MonoBehaviour:
   Path: event:/Music/MainTheme
   guid: c7ad400f2b018546acda514310d6d0d5
   Banks:
-  - {fileID: 6596731028954635413}
+  - {fileID: -1269621838977704415}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -429,6 +498,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2862662763958996215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environmental/Dreamscape2D 2
+  m_EditorClassIdentifier: 
+  Path: event:/Environmental/Dreamscape2D 2
+  guid: c55c6665c257c144ac50361dab96a538
+  Banks:
+  - {fileID: -1269621838977704415}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5000
 --- !u!114 &-2862056592488133821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,6 +598,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-2294334641507929638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environmental/Wind2D
+  m_EditorClassIdentifier: 
+  Path: event:/Environmental/Wind2D
+  guid: d43c1dfc5428e04fbcc1bfe737cb3cb9
+  Banks:
+  - {fileID: -1269621838977704415}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5000
 --- !u!114 &-1956207767471328418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,6 +675,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-1269621838977704415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637065817895465336
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-824657977561879900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,7 +726,7 @@ MonoBehaviour:
   Path: event:/Environmental/Dreamscape
   guid: a37b8f61ed810e428340d2a28777ebf2
   Banks:
-  - {fileID: 6596731028954635413}
+  - {fileID: -1269621838977704415}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -616,6 +749,29 @@ MonoBehaviour:
   Path: event:/Music/MainTheme2D
   guid: 36dd02f50f0e1d4895395b2962e02226
   Banks: []
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 19969
+--- !u!114 &-605661668577552193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainTheme2D
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MainTheme2D
+  guid: 36dd02f50f0e1d4895395b2962e02226
+  Banks:
+  - {fileID: -1269621838977704415}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -691,7 +847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 584773640872271815}
-  - {fileID: 6596731028954635413}
+  - {fileID: -1269621838977704415}
   EditorEvents:
   - {fileID: 5291693242582062473}
   - {fileID: 1496345691688147570}
@@ -699,20 +855,20 @@ MonoBehaviour:
   - {fileID: -805437152819019671}
   - {fileID: 7114356741072523868}
   - {fileID: -3803159526823928757}
-  - {fileID: 6266265585460371335}
-  - {fileID: 1582711761087155924}
-  - {fileID: -7525743628251477003}
-  - {fileID: 2263599987729465670}
-  - {fileID: 8009163293534241990}
-  - {fileID: 2461030923192643371}
-  - {fileID: 1116092247091338386}
-  - {fileID: -2862056592488133821}
+  - {fileID: -6300654489889933527}
+  - {fileID: -7079044230892263104}
+  - {fileID: -605661668577552193}
+  - {fileID: 8213302363595623240}
+  - {fileID: 1823778013001393647}
+  - {fileID: -3903055703112865102}
+  - {fileID: -2862662763958996215}
+  - {fileID: -2294334641507929638}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 6596731028954635413}
+  - {fileID: -1269621838977704415}
   StringsBanks:
   - {fileID: 584773640872271815}
-  stringsBankWriteTime: 637065804669316299
+  stringsBankWriteTime: 637065817895525174
   cacheVersion: 3
 --- !u!114 &584773640872271815
 MonoBehaviour:
@@ -728,7 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637065804669316299
+  lastModified: 637065817895525174
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -826,7 +982,7 @@ MonoBehaviour:
   Path: event:/SoundFX/BounceOnCloud
   guid: 1e052f82a810144d96ba3e6707448043
   Banks:
-  - {fileID: 6596731028954635413}
+  - {fileID: -1269621838977704415}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -857,6 +1013,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1124
+--- !u!114 &1823778013001393647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/User Interface/MenuSelect2D
+  m_EditorClassIdentifier: 
+  Path: event:/User Interface/MenuSelect2D
+  guid: 7916be4a34a405438e6f624e0ece2af3
+  Banks:
+  - {fileID: -1269621838977704415}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 92
 --- !u!114 &1951257215267185279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,7 +1250,7 @@ MonoBehaviour:
   Path: event:/User Interface/MenuSelect
   guid: 79525a98a1c3be40ae7bda0fd7d7fa06
   Banks:
-  - {fileID: 6596731028954635413}
+  - {fileID: -1269621838977704415}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1329,7 +1508,7 @@ MonoBehaviour:
   Path: event:/SoundFX/CollectItem
   guid: bb6d854f41330f46a00493e48a3ab5d6
   Banks:
-  - {fileID: 6596731028954635413}
+  - {fileID: -1269621838977704415}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1355,6 +1534,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &7848538088766146420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637065217666714603
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8009163293534241990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1371,6 +1568,29 @@ MonoBehaviour:
   guid: c55c6665c257c144ac50361dab96a538
   Banks:
   - {fileID: 6596731028954635413}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 5000
+--- !u!114 &8213302363595623240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environmental/Dreamscape2D
+  m_EditorClassIdentifier: 
+  Path: event:/Environmental/Dreamscape2D
+  guid: 499d564f6d9be14badc0a6219fba6896
+  Banks:
+  - {fileID: -1269621838977704415}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0

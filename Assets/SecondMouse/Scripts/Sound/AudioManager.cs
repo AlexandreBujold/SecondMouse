@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class AudioManager : MonoBehaviour
     FMOD.Studio.Bus SoundEffects;
     FMOD.Studio.Bus Music;
     FMOD.Studio.Bus Ambient;
+
+    public float score;
+    public TMPro.TextMeshProUGUI scoreText;
 
     // Declare & initialize volume variables.
     float masterVolume = 1f;
@@ -35,6 +39,16 @@ public class AudioManager : MonoBehaviour
         Ambient = FMODUnity.RuntimeManager.GetBus("bus:/Master/Ambient");
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += GetReferences;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= GetReferences;
+    }
+
     void Update()
     {
         // Set fmod buss volumes to equal script volume control variables.
@@ -42,6 +56,11 @@ public class AudioManager : MonoBehaviour
         SoundEffects.setVolume(soundEffectsVolume);
         Music.setVolume(musicVolume);
         Ambient.setVolume(ambientVolume);
+
+        if (scoreText != null)
+        {
+            scoreText.text = "Final Score: " + score;
+        }
     }
 
     // Volume slider control
@@ -65,7 +84,15 @@ public class AudioManager : MonoBehaviour
         ambientVolume = volumeLevel;
     }
 
+    public void GetReferences(Scene scene, LoadSceneMode mode)
+    {
+        scoreText = GameObject.Find("Score Value").GetComponentInChildren<TMPro.TextMeshProUGUI>();
+    }
 
+    public void GoToStart()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 
 }

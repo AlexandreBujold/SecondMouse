@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedSound: event:/SoundFX/BounceOnCloud2D
-  particleEffect: {fileID: 3476580812510556656, guid: d9e844e945048224fb7eaadf762dc2c1,
+  particleEffect: {fileID: 3380579290904957009, guid: 881775c7001172e4ca75266791632af1,
     type: 3}
   OnLanded:
     m_PersistentCalls:
@@ -137,7 +137,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   landedOn: 0
-  fallOnLand: 1
+  fallOnLand: 0
   destroyOnLand: 0
 --- !u!114 &62189547015683492
 MonoBehaviour:

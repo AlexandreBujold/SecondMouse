@@ -1535,6 +1535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3231e8c76d1e47c40951fc487ed525e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 0}
 --- !u!4 &1545759533
 Transform:
   m_ObjectHideFlags: 0
@@ -1879,7 +1881,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0.87290955
-        value: 0.26882553
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0

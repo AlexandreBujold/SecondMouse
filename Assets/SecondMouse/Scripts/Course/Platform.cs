@@ -27,7 +27,7 @@ public class Platform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         soundEvent = FMODUnity.RuntimeManager.CreateInstance(selectedSound);
 
         OnLanded.AddListener(Landed);
@@ -81,15 +81,16 @@ public class Platform : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
 
-            OnLanded.Invoke();
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            OnLanded.Invoke();
+        }
         Instantiate(particleEffect, transform.position, Quaternion.identity);
+
     }
 }

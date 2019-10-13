@@ -7,6 +7,8 @@ public class ScoreManager : MonoBehaviour
 {
 
     public static ScoreManager instance;
+    public float constantMultiplier = 1f;
+    private float originalMultiplier;
 
     public UnityEvent ScoreIncrease = new UnityEvent();
 
@@ -24,6 +26,7 @@ public class ScoreManager : MonoBehaviour
             Destroy(this);
         }
         ScoreIncrease.AddListener(UpdateScoreText);
+        originalMultiplier = constantMultiplier;
     }
 
     public int score;
@@ -40,10 +43,28 @@ public class ScoreManager : MonoBehaviour
 
     }
 
+    public void MultiplierActive(float multiplier, float time)
+    {
+        float original = constantMultiplier;
+        SetMultiplier(multiplier);
+        Invoke("ResetMultiplier", time);
+
+    }
+
+    private void SetMultiplier(float multiplier)
+    {
+        constantMultiplier = multiplier;
+    }
+
+    private void ResetMultiplier()
+    {
+        constantMultiplier = originalMultiplier;
+    }
+
 
     public void AddScore(int amount)
     {
-        AddScore(amount, 1f);
+        AddScore(amount, constantMultiplier);
     }
 
     public void AddScore(int amount, float multiplier)

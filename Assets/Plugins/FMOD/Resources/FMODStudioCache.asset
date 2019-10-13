@@ -41,6 +41,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7987
+--- !u!114 &-6042643235609804766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environmental/Wind
+  m_EditorClassIdentifier: 
+  Path: event:/Environmental/Wind
+  guid: 08bc3d95080d2b4d8765a41d04402ea2
+  Banks:
+  - {fileID: 7745940208471893045}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &-5429957859909936956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +105,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-4569331661869305738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637065164069511082
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &-3803159526823928757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +138,7 @@ MonoBehaviour:
   Path: event:/Music/MainTheme
   guid: c7ad400f2b018546acda514310d6d0d5
   Banks:
-  - {fileID: 2739693275906816633}
+  - {fileID: 7745940208471893045}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -156,7 +197,7 @@ MonoBehaviour:
   Path: event:/Environmental/Dreamscape
   guid: a37b8f61ed810e428340d2a28777ebf2
   Banks:
-  - {fileID: 2739693275906816633}
+  - {fileID: 7745940208471893045}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -196,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 584773640872271815}
-  - {fileID: 2739693275906816633}
+  - {fileID: 7745940208471893045}
   EditorEvents:
   - {fileID: 5291693242582062473}
   - {fileID: 1496345691688147570}
@@ -204,12 +245,14 @@ MonoBehaviour:
   - {fileID: -805437152819019671}
   - {fileID: 7114356741072523868}
   - {fileID: -3803159526823928757}
+  - {fileID: -6042643235609804766}
+  - {fileID: 8997581678335183238}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 2739693275906816633}
+  - {fileID: 7745940208471893045}
   StringsBanks:
   - {fileID: 584773640872271815}
-  stringsBankWriteTime: 637065217666874174
+  stringsBankWriteTime: 637065284896357692
   cacheVersion: 3
 --- !u!114 &584773640872271815
 MonoBehaviour:
@@ -225,11 +268,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637065217666874174
+  lastModified: 637065284896357692
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1214
+    Value: 1302
   Exists: 1
 --- !u!114 &1084306760874594287
 MonoBehaviour:
@@ -264,7 +307,7 @@ MonoBehaviour:
   Path: event:/SoundFX/BounceOnCloud
   guid: 1e052f82a810144d96ba3e6707448043
   Banks:
-  - {fileID: 2739693275906816633}
+  - {fileID: 7745940208471893045}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -307,7 +350,7 @@ MonoBehaviour:
   lastModified: 637065217666714603
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &3215695430502177401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,7 +407,7 @@ MonoBehaviour:
   Path: event:/User Interface/MenuSelect
   guid: 79525a98a1c3be40ae7bda0fd7d7fa06
   Banks:
-  - {fileID: 2739693275906816633}
+  - {fileID: 7745940208471893045}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -431,6 +474,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &6806773768315723292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637065275874099786
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &7093389946389364379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +530,7 @@ MonoBehaviour:
   Path: event:/SoundFX/CollectItem
   guid: bb6d854f41330f46a00493e48a3ab5d6
   Banks:
-  - {fileID: 2739693275906816633}
+  - {fileID: 7745940208471893045}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -477,3 +538,44 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3993
+--- !u!114 &7745940208471893045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODstudioProject/SecondMouseSound/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637065284896277793
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8997581678335183238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SoundFX/UseAbility
+  m_EditorClassIdentifier: 
+  Path: event:/SoundFX/UseAbility
+  guid: 1320c12905b623458c730408b7af50a1
+  Banks:
+  - {fileID: 7745940208471893045}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1124
